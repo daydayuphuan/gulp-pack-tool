@@ -37,12 +37,11 @@ var cancat_name = 'all-' + Math.random().toString(36).substr(2) + '.js';
  * publish mode or develop mode
  */
 var pub_vm = argv.p;
-var dev_vm = argv.d;
 
 /**
  * 模块 
  */
-var md_vm = argv.p || 'all';
+var md_vm = pub_vm || 'all';
 
 /**
  * 任务列表
@@ -53,7 +52,7 @@ var task_list = [];
  * 模块配置
  */
 //var mods = require('./gulpfile.config').mods;
-var mods = require('./gulpfile.config.c').mods;
+var mods = require('./gulpfile.config').mods;
 
 /**
  * 编译函数
@@ -282,8 +281,6 @@ gulp.task('help', function () {
     console.log('====================================================================================');
     console.log('=====   gulp pack  <_less|_scss|_css|_js|_image|_html>              打包       =====');
     console.log('=====   gulp -p                                                     生产环境   =====');
-    console.log('=====   gulp -d                                                     开发环境   =====');
-    console.log('=====   gulp -m  <less|scss|css|js|image|html> defualat <all>       编译模块   =====');
     console.log('====================================================================================');
     console.log('');
 });
